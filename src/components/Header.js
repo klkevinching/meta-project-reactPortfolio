@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
   faLinkedin,
@@ -31,6 +31,19 @@ const socials = [
     url: "https://stackoverflow.com",
   },
 ];
+
+// function SocialList() {
+const SocialList = () => {
+  const socialList = socials.map(item => {
+    return (
+      <span className="social-list">
+        <a href={item.url}><FontAwesomeIcon icon={item.icon} size="2x" /></a>  
+      </span>
+    )
+  })
+
+  return <>{socialList}</>
+}
 
 const Header = () => {
   const handleClick = (anchor) => () => {
@@ -65,8 +78,10 @@ const Header = () => {
         >
           <nav>
             {/* Add social media links based on the `socials` data */}
+            <SocialList></SocialList>
           </nav>
           <nav>
+            Test
             <HStack spacing={8}>
               {/* Add links to Projects and Contact me section */}
             </HStack>
