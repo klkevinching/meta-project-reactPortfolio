@@ -19,3 +19,19 @@ code {
 .social-list:not(:first-child) {
   margin-left: 1.2rem;
 }
+
+.hero {
+  text-align: center;
+}
+
+.hero img {
+  display: block;
+  margin: .5rem auto;
+  border-radius: 100%;
+}
+
+.hero p {
+  margin-top: 2.5rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
