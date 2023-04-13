@@ -32,6 +32,17 @@ const socials = [
   },
 ];
 
+const intLinks = [
+  {
+    text: "Projects",
+    url: "#projects"
+  },
+  {
+    text: "Contact Me",
+    url: "#contactme"
+  }
+]
+
 // function SocialList() {
 const SocialList = () => {
   const socialList = socials.map(item => {
@@ -46,9 +57,11 @@ const SocialList = () => {
 }
 
 const Header = () => {
-  const handleClick = (anchor) => () => {
-    const id = `${anchor}-section`;
-    const element = document.getElementById(id);
+  const handleClick = (anchor) => {
+    anchor.preventDefault()
+    const id = `${anchor.target.getAttribute("href")}-section`;
+    console.log(id)
+    const element = document.querySelector(id);
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
@@ -56,6 +69,17 @@ const Header = () => {
       });
     }
   };
+  
+  // const handleClick = (anchor) => () => {
+  //   const id = `${anchor}-section`;
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     element.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   }
+  // };
 
   return (
     <Box
@@ -81,9 +105,13 @@ const Header = () => {
             <SocialList></SocialList>
           </nav>
           <nav>
-            Test
             <HStack spacing={8}>
               {/* Add links to Projects and Contact me section */}
+              {
+                intLinks.map(link => {
+                  return <a href={link.url} onClick={handleClick}>{link.text}</a>
+                })
+              }
             </HStack>
           </nav>
         </HStack>

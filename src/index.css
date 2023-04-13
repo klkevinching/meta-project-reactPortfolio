@@ -16,6 +16,6 @@ code {
     monospace;
 }
 
-.social-list {
-  margin-right: 1.2rem;
+.social-list:not(:first-child) {
+  margin-left: 1.2rem;
 }
