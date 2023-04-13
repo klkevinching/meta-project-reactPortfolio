@@ -17,7 +17,7 @@ const LandingSection = () => (
   >
     <article>
       <VStack>
-        <Avatar src="https://i.pravatar.cc/150?img=7" name="Pete" size="2xl" zIndex="base"></Avatar>
+        <Avatar src="https://i.pravatar.cc/150?img=7" name="Pete" size="2xl"></Avatar>
         <div>{greeting}</div>
         <Heading pt="10" textAlign="center" lineHeight="4rem">
           {bio1}<br />
