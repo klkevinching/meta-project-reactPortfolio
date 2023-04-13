@@ -47,7 +47,7 @@ const intLinks = [
 const SocialList = () => {
   const socialList = socials.map(item => {
     return (
-      <span className="social-list">
+      <span className="social-list" key={item.url}>
         <a href={item.url}><FontAwesomeIcon icon={item.icon} size="2x" /></a>  
       </span>
     )
@@ -92,6 +92,7 @@ const Header = () => {
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
       backgroundColor="#18181b"
+      zIndex="sticky"
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
         <HStack
@@ -109,7 +110,7 @@ const Header = () => {
               {/* Add links to Projects and Contact me section */}
               {
                 intLinks.map(link => {
-                  return <a href={link.url} onClick={handleClick}>{link.text}</a>
+                  return <a href={link.url} onClick={handleClick} key={link.text}>{link.text}</a>
                 })
               }
             </HStack>

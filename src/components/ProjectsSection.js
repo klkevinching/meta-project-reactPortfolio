@@ -30,6 +30,7 @@ const projects = [
   },
 ];
 
+
 const ProjectsSection = () => {
   return (
     <FullScreenSection
